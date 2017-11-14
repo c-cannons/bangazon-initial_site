@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration[5.1]
       t.string :customer_last_name, null:false
       t.string :street_address, null:false
       t.string :city, null:false
+      t.string :state, null:false
       t.string :zip, null:false
       t.string :phone_number, null:false
 
