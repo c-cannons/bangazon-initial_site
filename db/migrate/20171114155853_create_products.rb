@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :product_desc, null:false
       t.datetime :product_added, null:false
       t.string :product_location
-      t.binary :product_picture, limit: 5.megabyte
+      t.attachment :product_picture
       t.timestamps
     end
   end

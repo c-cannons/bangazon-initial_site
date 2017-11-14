@@ -67,7 +67,10 @@ ActiveRecord::Schema.define(version: 20171114155932) do
     t.string "product_desc", null: false
     t.datetime "product_added", null: false
     t.string "product_location"
-    t.binary "product_picture", limit: 5242880
+    t.string "product_picture_file_name"
+    t.string "product_picture_content_type"
+    t.integer "product_picture_file_size"
+    t.datetime "product_picture_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_products_on_customer_id"
