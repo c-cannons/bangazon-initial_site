@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20171114155932) do
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "payment_method_id", null: false
-    t.datetime "order_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
@@ -62,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171114155932) do
 
   create_table "products", force: :cascade do |t|
     t.integer "customer_id", null: false
-    t.integer "product_type_id_id", null: false
+    t.integer "product_type_id", null: false
     t.string "product_name", null: false
     t.decimal "product_price", precision: 6, scale: 2, null: false
     t.string "product_desc", null: false
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171114155932) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_products_on_customer_id"
-    t.index ["product_type_id_id"], name: "index_products_on_product_type_id_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
   end
 
 end
