@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+    
     def new
         @customer = Customer.new
     end
@@ -11,6 +12,14 @@ class CustomersController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show
+        # if session[:customer_id] == params[:id]
+            @customer = Customer.find(params[:id])
+    #    else
+    #       flash.now.notice = "You can't view that record."
+        # end
     end
 
     private
