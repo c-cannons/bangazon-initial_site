@@ -16,3 +16,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$('#search-switch').on('change', () => {
+    if ($(this).checked) {
+
+    } else {
+
+    }
+});
