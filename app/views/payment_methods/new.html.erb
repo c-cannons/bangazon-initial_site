@@ -30,5 +30,6 @@
         <div class="actions"><%= f.submit "Add Payment Method" %></div>
 
     <% end %>
+    <%= link_to 'See Your Payment Methods', payment_methods_path %> | <%= link_to 'Back To Profile', customer_path(@current_customer.id) %>
 
 </div>

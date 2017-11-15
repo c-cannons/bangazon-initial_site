@@ -5,4 +5,5 @@
         <p><b>Payment Type: </b><%= payment_method.payment_method_name %></p>
         <p><b>Account Number: </b><%= payment_method.account_number %></p>
     <% end %>
+    <%= link_to "Add New Payment Method", new_pay_path  %> | <%= link_to 'Back To Profile', customer_path(@current_customer.id) %>
 <div>
