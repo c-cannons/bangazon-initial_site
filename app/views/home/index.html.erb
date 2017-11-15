@@ -2,7 +2,12 @@
 <div class="container">
     <h1>HOME</h1>
     <p>Find me in app/views/home/index.html.erb</p>
-
+    <% if logged_in? %>
+        <%= logged_in? %>
+        <%= @current_customer.id %>
+        <%= @current_customer.customer_first_name %>
+        <%= @current_customer.customer_last_name %>
+    <% end %>
     <div>
         <%= image_tag('CHUDazon', class:'img-fluid') %>
     </div>
