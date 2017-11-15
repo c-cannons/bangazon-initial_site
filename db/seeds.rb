@@ -26,7 +26,7 @@ end
         product_name: Faker::Commerce.product_name, 
         product_price: Faker::Commerce.price,
         product_desc: Faker::Lorem.paragraph,
-        quantity: rand(1..50)
+        quantity: rand(1..50),
         product_location: Faker::Address.city
     }])
 end
