@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20171114155932) do
     t.string "product_name", null: false
     t.decimal "product_price", precision: 6, scale: 2, null: false
     t.string "product_desc", null: false
-    t.datetime "product_added", null: false
     t.string "product_location"
     t.string "product_picture_file_name"
     t.string "product_picture_content_type"
