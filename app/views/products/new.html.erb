@@ -51,9 +51,12 @@
         </p>
 
         <p>
-          <%= form.check_box :local_delivery %>
-          <%= form.label :product_location %><br>
-          <%= form.text_field :product_location, class: "form-control"  %>
+          <%= form.check_box :local_delivery, id: "delivery-checkbox", onclick: "localDelivery();" %>
+          <%= form.label 'Local Delivery?' %><br>
+          <div id="local-delivery" class="hide">
+            <%= form.label 'Delivery Destination' %><br>
+            <%= form.text_field :product_location, class: "form-control"  %>
+          </div>
         </p>
 
         <p>

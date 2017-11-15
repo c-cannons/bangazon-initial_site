@@ -16,3 +16,13 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+function localDelivery() {
+    if ($('#delivery-checkbox').is(":checked")) {
+        $('#local-delivery').removeAttr('class');
+        $('#local-delivery').css('display', 'block');
+    }
+    else {
+        $('#local-delivery').css('display', 'none');
+    }
+}
