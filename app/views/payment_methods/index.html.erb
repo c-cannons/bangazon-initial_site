@@ -1,4 +1,8 @@
 <%= render 'shared/header' %>
 <div class="container">
     <h1>Payment Methods</h1>
+    <% @payment_methods.each do |payment_method|%>
+        <p><b>Payment Type: </b><%= payment_method.payment_method_name %></p>
+        <p><b>Account Number: </b><%= payment_method.account_number %></p>
+    <% end %>
 <div>

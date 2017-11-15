@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+    # before_action :require_login
     
     def new
         @customer = Customer.new
@@ -15,16 +16,13 @@ class CustomersController < ApplicationController
     end
 
     def show
-        # if session[:customer_id] == params[:id]
-            @customer = Customer.find(params[:id])
-    #    else
-    #       flash.now.notice = "You can't view that record."
-        # end
+        @customer = Customer.find(session[:customer_id])
     end
 
     private
-    
+
         def customer_params
             params.require(:customer).permit(:email, :password, :password_confirmation, :customer_first_name, :customer_last_name, :street_address, :city, :state, :zip, :phone_number)
         end
+
 end

@@ -10,5 +10,6 @@
     <p><b>Zip:</b> <%= @customer.zip %></p>
     <p><b>Phone:</b> <%= @customer.phone_number %></p>
 
-    <%= link_to 'See Your Payment Methods', payment_methods_path %>
+    <%= link_to 'See Your Payment Methods', payment_methods_path %> | 
+    <%= link_to "Add New Payment Method", new_pay_path  %>
 </div>
