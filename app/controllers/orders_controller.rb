@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+    def index
+        @orders = Order.all.where
+    end
+
     def create
         @order = Order.new(order_params)
         @order.save
