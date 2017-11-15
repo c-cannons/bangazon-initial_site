@@ -1,0 +1,77 @@
+<%= render template: "./shared/_header" %>
+
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <br>
+      <h2>Create a Product to Sell</h2>
+      <br>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Choose Product Category:
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Sport</a>
+          <a class="dropdown-item" href="#">Music</a>
+          <a class="dropdown-item" href="#">Clothes</a>
+        </div>
+      </div>
+
+      <br><br>
+      
+
+      <%= form_with scope: :product, url: products_path, local: true do |form| %>
+      
+        <% if @product.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@product.errors.count, "error") %> prohibited
+              this product from being saved:
+            </h2>
+            <ul>
+              <% @product.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <p>
+          <%= form.label :customer_id %><br>
+          <%= form.text_field :customer_id, class: "form-control"  %>
+        </p>
+
+        <p>
+          <%= form.label :product_type_id %><br>
+          <%= form.text_field :product_type_id, class: "form-control"  %>
+        </p>
+
+        <p>
+          <%= form.label :product_name %><br>
+          <%= form.text_field :product_name, class: "form-control"  %>
+        </p>
+
+        <p>
+          <%= form.label :product_price %><br>
+          <%= form.text_field :product_price, class: "form-control"  %>
+        </p>
+
+        <p>
+          <%= form.label :product_desc %><br>
+          <%= form.text_area :product_desc, class: "form-control"  %>
+        </p>
+
+        <p>
+          <%= form.check_box :local_delivery %>
+          <%= form.label :product_location %><br>
+          <%= form.text_field :product_location, class: "form-control"  %>
+        </p>
+      
+        <p>
+          <%=  form.submit "Sell", class: "btn btn-success" %>
+        </p>
+      <% end %>
+
+    </div>
+  </div>
+</div>
