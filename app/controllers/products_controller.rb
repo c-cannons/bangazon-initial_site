@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
     def index
-        @products = Product.all
+        @products = Product.where(customer_id: session[:customer_id])
     end
     
     def new
@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     end
 
     def create
+        
         @product = Product.new(product_params)
         # @product[:customer_id] = @current_user
         if @product.save
