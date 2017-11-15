@@ -1,9 +1,5 @@
 class Product < ApplicationRecord
     
-    validates :customer_id, presence: true
-    validates :product_type_id, presence: true
-    validates :product_name, presence: true
-    validates :product_price, presence: true
-    validates :product_desc, presence: true
+    validates_presence_of :customer_id, :product_type_id, :product_name, :product_price, :product_desc
 
 end
