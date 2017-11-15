@@ -1,5 +1,9 @@
 class ProductTypesController < ApplicationController
 
+    def index
+        @product_types = ProductType.all
+    end
+
     # This is only used for the faker gem
     def create
         @product_type = ProductType.new(product_type_params)
