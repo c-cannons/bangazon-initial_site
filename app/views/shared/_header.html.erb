@@ -46,15 +46,19 @@
                     <% end %>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
 
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <%= form_tag('/products/search', method: "get", id: "searchbar", class: "form-inline my-2 my-lg-0") do %>
+        
+            <%= text_field_tag(:search_string, nil, class: 'form-control', placeholder: 'Search', id: 'search-input')%>
             
             <label class="switch">
-                <input type="checkbox" id="search-switch">
+                <%= check_box_tag :search_by_name, 'search-switch', id: "search-switch" %>
+                <%# <input type="checkbox" id="search-switch"> %>
                 <span class="slider round"></span>
             </label>
 
-        </form>
+        <% end %>
+
+
     </div>
 </nav>

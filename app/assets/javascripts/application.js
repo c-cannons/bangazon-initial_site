@@ -17,11 +17,10 @@
 //= require turbolinks
 //= require_tree .
 
-$('#search-switch').on('change', () => {
-    if ($(this).checked) {
-
-    } else {
-
+$("search-input").keypress(function (event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("searchbar").submit();
     }
 });
 function localDelivery() {

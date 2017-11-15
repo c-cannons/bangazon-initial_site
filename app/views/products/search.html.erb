@@ -1,0 +1,21 @@
+<%= render 'shared/header' %>
+<div class="container">
+<h2> Search: '<%= @search %>' </h2>
+    <% @products.each_slice(3) do |prod|%>
+        <div class="row">
+            <% prod.each do |p|%>
+                <div class="card col-md" style="width: 20rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title"> <%= p[:product_name]%> </h4>
+                        <h6> Quantity: </h6>
+                        <p class="card-text"> <%= p[:quantity] %> </p>
+                        <h6> Price: </h6>
+                        <p class="card-text">$ <%= p[:product_price] %> </p>
+                        <a> <%= link_to 'More Info', product_path(p), class: 'btn' %> </a>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>

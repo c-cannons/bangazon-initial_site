@@ -17,14 +17,16 @@
         </tr> 
         
         <% @products.each do |product| %>
-            <tr>
-            <td><%= product.product_name %></td>
-            <td><%= product.product_price %></td>
-            <td><%= product.product_desc %></td>
-            <td><%= product.product_location %></td>
-            <td><%= product.quantity %></td>
-            <td><%= link_to 'Show', product_path(product) %></td>
-            </tr>
+            <% if product[:customer_id] == session[:customer_id]%>
+                <tr>
+                <td><%= product.product_name %></td>
+                <td><%= product.product_price %></td>
+                <td><%= product.product_desc %></td>
+                <td><%= product.product_location %></td>
+                <td><%= product.quantity %></td>
+                <td><%= link_to 'Show', product_path(product) %></td>
+                </tr>
+            <% end %>
         <% end %>
         </table>
         </div>
