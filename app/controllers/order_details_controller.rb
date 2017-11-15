@@ -1,5 +1,9 @@
 class OrderDetailsController < ApplicationController
 
+    def index
+        @order_details = OrderDetail.all
+    end
+
     def create
         @order_detail = OrderDetail.new(order_detail_params)
         @order_detail.save
