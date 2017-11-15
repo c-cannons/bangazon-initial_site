@@ -1,0 +1,18 @@
+<%= render 'shared/header'%>
+<ul class="list-group">
+    <% @product_types.each do |pt|%>
+        <li class="list-group-item justify-content-between">
+            <%= pt.product_type_name%>
+            <span class="badge badge-default badge-pill">(<%= @products_by_type[pt[:id]].length %>)</span>
+            <% if @products_by_type[pt[:id]] != [] %>
+                <ul>
+                    <% 3.times do |p|%>
+                        <% if @products_by_type[pt[:id]][p] != nil%>
+                            <%= link_to @products_by_type[pt[:id]][p][:product_name], product_path(@products_by_type[pt[:id]][p])%><br>
+                        <% end %>
+                    <% end %>
+                </ul>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
