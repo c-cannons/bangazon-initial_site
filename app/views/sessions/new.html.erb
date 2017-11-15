@@ -1,5 +1,7 @@
 <%= render 'shared/header' %>
 <div class="container">
+
+<%= flash[:notice] %>
     <h1>Log In</h1>
 
     <%= form_tag sessions_path do %>

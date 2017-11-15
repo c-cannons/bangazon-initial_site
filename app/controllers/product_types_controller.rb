@@ -8,6 +8,12 @@ class ProductTypesController < ApplicationController
         end
     end
 
+    def show
+        @product_type = ProductType.find(params[:id])
+        @products = Product.where(product_type_id: @product_type[:id])
+        p @products
+    end
+
     # This is only used for the faker gem
     def create
         @product_type = ProductType.new(product_type_params)
