@@ -6,20 +6,7 @@
       <br>
       <h2>Create a Product to Sell</h2>
       <br>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Choose Product Category:
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Sport</a>
-          <a class="dropdown-item" href="#">Music</a>
-          <a class="dropdown-item" href="#">Clothes</a>
-        </div> 
-      </div>
-
-      <br><br>
       
-
       <%= form_with scope: :product, url: products_path, local: true do |form| %>
       
         <% if @product.errors.any? %>
@@ -39,9 +26,14 @@
         <%= form.hidden_field :customer_id, :value => @current_customer[:id] %>
 
         <p>
-          <%= form.label :product_type_id %><br>
-          <%= form.text_field :product_type_id, class: "form-control"  %>
+          <%= form.select(:product_type_id) do %>
+            <% ProductType.all.each do |c| -%>
+              <%= content_tag(:option, c.product_type_name, value: c.id) %>
+            <% end %>
+          <% end %>
         </p>
+
+        
 
         <p>
           <%= form.label :product_name %><br>
