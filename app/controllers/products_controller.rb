@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
     def create
         @product = Product.new(product_params)
-        @product[:customer_id] = @current_user
+        # @product[:customer_id] = @current_user
         if @product.save
             redirect_to @product
         else
