@@ -14,11 +14,12 @@ ActiveRecord::Schema.define(version: 20171114155932) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.string "customer_first_name", null: false
     t.string "customer_last_name", null: false
     t.string "street_address", null: false
     t.string "city", null: false
+    t.string "state", null: false
     t.string "zip", null: false
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
@@ -37,7 +38,6 @@ ActiveRecord::Schema.define(version: 20171114155932) do
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "payment_method_id", null: false
-    t.datetime "order_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
