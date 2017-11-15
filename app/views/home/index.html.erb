@@ -1,5 +1,7 @@
 <%= render 'shared/header' %>
+
 <div class="container">
+<%= flash[:notice] %>
     <h1>HOME</h1>
     <p>Find me in app/views/home/index.html.erb</p>
     <% if logged_in? %>
