@@ -1,0 +1,23 @@
+
+footer {
+    text-align: center;
+    font-size: .8rem;
+    color: white;
+    background-color: #323B40;
+    // position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    display:table;
+}
+
+#footer-p {
+    margin-bottom: 0rem;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container {
+    margin-bottom: 1rem;
+}

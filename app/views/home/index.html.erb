@@ -1,17 +1,25 @@
 <%= render 'shared/header' %>
 
-<div class="container">
-<%= flash[:notice] %>
-    <h1>HOME</h1>
-    <!-- <p>Find me in app/views/home/index.html.erb</p> -->
-    <% if logged_in? %>
-        <%= logged_in? %>
-        <%= @current_customer.id %>
-        <%= @current_customer.customer_first_name %>
-        <%= @current_customer.customer_last_name %>
-    <% end %>
-    <div>
-        <%= image_tag('CHUDazon', class:'img-fluid') %>
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        
+        <header>
+            <h5 class="text-danger"><%= flash[:notice] %></h5>
+            <h1 class="welcome">Welcome To Banagazon</h1>
+            <h2>You need stuff?  We GOT stuff.™</h2>
+        </header>
+            <!-- These can be re-enabled to check user state. -->
+           <!--  <% if logged_in? %>
+                <%= logged_in? %>
+                <%= @current_customer.id %>
+                <%= @current_customer.customer_first_name %>
+                <%= @current_customer.customer_last_name %>
+            <% end %> -->
+            <div>
+                <%= image_tag('CHUDazon', class:'img-fluid') %>
+            </div>
+        </div>
     </div>
 </div>
 
