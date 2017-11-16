@@ -36,6 +36,7 @@ gem 'faker'
 #BOOTSTRAP STUFF
 gem 'bootstrap', '~> 4.0.0.beta2'
 gem 'jquery-rails'
+gem 'pry'
 ################
 
 # Use Capistrano for deployment
