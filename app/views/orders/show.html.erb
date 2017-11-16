@@ -1,0 +1,30 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+    <table>
+        
+        <tr>
+            <th>Quantity</th>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        <% @order.products.select("product_name, product_price, count(*) as count").group(:product_name).each do |p| %>
+            <tr>
+                <td><%= p['count']%></td>
+                <td><%= p[:product_name] %></td>
+                <td>$<%= p[:product_price] %></td>
+            </tr>
+        <% end %>
+        <tr>
+            <td>
+                <strong>Total</strong>
+            </td>
+            <td>
+            </td>
+            <td>
+                <strong>$<%= @order.products.sum(:product_price) %></strong>
+            </td>
+        </tr>
+    </table>
+    <%= link_to 'Back', orders_path %>
+</div>
