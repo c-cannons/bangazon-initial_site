@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :order_details
   resources :orders
   resources :payment_methods
-  resources :products
+  resources :products do
+    collection do
+      get :search
+    end
+  end
   resources :product_types
   resources :customers
   resources :sessions
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'new_pay', to: 'payment_methods#new', as: 'new_pay'
+
+  get 'search', to: 'products#search', as: 'search'
 
   get 'home/index'
   root 'home#index'

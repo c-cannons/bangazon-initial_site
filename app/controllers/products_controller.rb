@@ -1,11 +1,21 @@
 class ProductsController < ApplicationController
 
     def index
-        @products = Product.where(customer_id: session[:customer_id])
-    end
-    
+        @products = Product.all
+    end 
+
     def new
         @product = Product.new
+    end
+
+    def search
+        @search = params[:search_string]
+        if params[:search_by_name]
+            @products = Product.fuzzy_name_search(@search)
+        else
+            @products = Product.fuzzy_location_search(@search)
+        end
+        render 'products/search'
     end
 
     def create
