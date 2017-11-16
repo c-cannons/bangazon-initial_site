@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/products/new" id="sell">Sell</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/orders" id="cart">Cart</a>
+                <a class="nav-link" href="/order_details" id="cart">Cart</a>
             </li>
             <li class="nav-item">
                 <%# <a class="nav-link" href="#" id="cart">Cart</a> %>
@@ -51,13 +51,13 @@
                         <%= link_to "Log In", login_path, {:class => "nav-link"} %>
                     <% end %>
             </li>
-            
+
         </ul>
 
         <%= form_tag('/products/search', method: "get", id: "searchbar", class: "form-inline my-2 my-lg-0") do %>
-        
+
             <%= text_field_tag(:search_string, nil, class: 'form-control', placeholder: 'Search', id: 'search-input')%>
-            
+
             <label class="switch">
                 <%= check_box_tag :search_by_name, 'search-switch', id: "search-switch" %>
                 <%# <input type="checkbox" id="search-switch"> %>
