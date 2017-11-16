@@ -13,6 +13,7 @@ payment_method_ids = []
 # MUST CREATE 4 CUSTOMERS MANUALLY TO SEED PROPERLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ##########################################################################################
 
+
 15.times do |f|
     ProductType.create([{
         product_type_name: Faker::Commerce.unique.department

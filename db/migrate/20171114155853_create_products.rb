@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :product_desc, null:false
       t.integer :quantity
       t.string :product_location
-      t.attachment :product_picture
       t.timestamps
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114155932) do
+ActiveRecord::Schema.define(version: 20171116162820) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", null: false
@@ -67,12 +67,12 @@ ActiveRecord::Schema.define(version: 20171114155932) do
     t.string "product_desc", null: false
     t.integer "quantity"
     t.string "product_location"
-    t.string "product_picture_file_name"
-    t.string "product_picture_content_type"
-    t.integer "product_picture_file_size"
-    t.datetime "product_picture_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["customer_id"], name: "index_products_on_customer_id"
     t.index ["product_type_id"], name: "index_products_on_product_type_id"
   end

@@ -1,0 +1,46 @@
+<%= render 'shared/header' %>
+
+
+<div class="container">
+<h2>Order History</h2>
+
+        <table> 
+            <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Payment Method</th>
+                <th></th>
+            </tr>
+
+            <% @orders_by_current_customer.each_with_index do |order, i|%>
+
+                <tr>
+                    <td> <%= "#{i+1}"%> </td>
+
+                    <td><%= 
+
+                    datetime = order[:updated_at].to_s.split(" ")
+                    date = datetime[0]
+                    date
+                    %></td>
+                
+                    <td>
+
+                        <p class= "mb-0"><%= order.payment_method[:payment_method_name] %> 
+                        <small>ending in </small><%= 
+                        
+                        pm = order.payment_method[:account_number].split("")
+                        last_4 = pm.slice(pm.length - 4, pm.length)
+                        last_4.join("")
+                        
+                        %></p> 
+                    </td>
+                    <td>
+                        <%= link_to 'Details', order_path(order)%>
+                    </td>
+                </tr>
+
+            <% end %>
+        </table>
+
+</div>
