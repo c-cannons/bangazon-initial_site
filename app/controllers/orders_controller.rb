@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
     def index
         @orders = Order.all
         @orders_by_current_customer = Order.where({customer_id: session[:customer_id]})
-    end 
+    end
 
     def show
         @order = Order.find(params[:id])
@@ -12,6 +12,9 @@ class OrdersController < ApplicationController
     def create
         @order = Order.new(order_params)
         @order.save
+    end
+
+    def destroy
     end
 
     private
