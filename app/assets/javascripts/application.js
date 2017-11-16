@@ -32,3 +32,4 @@ function localDelivery() {
         $('#local-delivery').css('display', 'none');
     }
 }
+
