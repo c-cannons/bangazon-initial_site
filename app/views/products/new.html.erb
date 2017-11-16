@@ -26,7 +26,7 @@
         <%= form.hidden_field :customer_id, :value => @current_customer[:id] %>
 
         <p>
-          <%= form.select(:product_type_id) do %>
+          <%= form.select(:product_type_id, :include_blank => 'None Specified') do %>
             <% ProductType.all.each do |c| -%>
               <%= content_tag(:option, c.product_type_name, value: c.id) %>
             <% end %>
