@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-
     belongs_to :customer
     has_many :order_details
     has_many :orders, through: :order_details
@@ -15,5 +14,4 @@ class Product < ApplicationRecord
         search_string = "%" + search_string + "%"
         self.where("product_location LIKE ?", search_string)
     end
-
 end
