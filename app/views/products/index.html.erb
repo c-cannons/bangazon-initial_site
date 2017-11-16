@@ -1,34 +1,22 @@
-<%= render template: "./shared/_header" %>
+<%= render "shared/header" %>
 
 <div class="container center">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-        <br>
-        <h2>Your Products</h2>
-        <br>
-        <table>
-        <tr id="table-headers">
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Location</th>
-            <th>Quantity</th>
-            <th></th>
-        </tr> 
-        
-        <% @products.each do |product| %>
-            <% if product[:customer_id] == session[:customer_id]%>
-                <tr>
-                <td><%= product.product_name %></td>
-                <td><%= product.product_price %></td>
-                <td><%= product.product_desc %></td>
-                <td><%= product.product_location %></td>
-                <td><%= product.quantity %></td>
-                <td><%= link_to 'Show', product_path(product) %></td>
-                </tr>
+    <h2>My Products</h2>
+    <% @products.each_slice(3) do |prod|%>
+        <div class="row">
+            <% prod.each do |p|%>
+                <div class="card col-md" style="width: 20rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title"> <%= p[:product_name]%> </h4>
+                        <h6> Quantity: </h6>
+                        <p class="card-text"> <%= p[:quantity] %> </p>
+                        <h6> Price: </h6>
+                        <p class="card-text">$ <%= p[:product_price] %> </p>
+                        <a> <%= link_to 'More Info', product_path(p), class: 'btn' %> </a>
+                    </div>
+                </div>
             <% end %>
-        <% end %>
-        </table>
         </div>
-    </div>
+    <% end %>
 </div>
