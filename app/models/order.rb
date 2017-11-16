@@ -1,12 +1,9 @@
 class Order < ApplicationRecord
 
-    def create
-        @order = Order.new(order_params)
-        @order.save
-    end
+    belongs_to :customer
+    belongs_to :payment_method
+    has_many :order_details
+    has_many :products, through: :order_details
 
-    private
-        def order_params
-            params.require(:order).permit(:customer_id, :payment_type_id)
-        end
+    validates_presence_of :customer_id
 end
