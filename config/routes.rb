@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'customers#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'new_pay', to: 'payment_methods#new', as: 'new_pay'
 
   get 'search', to: 'products#search', as: 'search'
 
