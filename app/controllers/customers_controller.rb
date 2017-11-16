@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+    # before_action :require_login
+    
     def new
         @customer = Customer.new
     end
@@ -13,9 +15,14 @@ class CustomersController < ApplicationController
         end
     end
 
+    def show
+        @customer = Customer.find(session[:customer_id])
+    end
+
     private
-    
+
         def customer_params
             params.require(:customer).permit(:email, :password, :password_confirmation, :customer_first_name, :customer_last_name, :street_address, :city, :state, :zip, :phone_number)
         end
+
 end
