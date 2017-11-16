@@ -5,8 +5,11 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
         <br>
-        <h2><strong>Product Name:</strong>
-        <%= @product.product_name %></h2>
+        <h2><strong><%= @product.product_name %></strong></h2>
+
+        <p>
+        <%= image_tag @product.avatar.url %>
+        </p>
         
         <p>
         <strong>Price:</strong>
@@ -20,6 +23,10 @@
         <strong>Location:</strong>
         <%= @product.product_location %>
         </p>
+
+        <strong>Quantity</strong>
+        <%= @product.quantity %>
+        </strong>
 
         <br>
 

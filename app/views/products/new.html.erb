@@ -7,10 +7,10 @@
       <h2>Create a Product to Sell</h2>
       <br>
       
-      <%= form_with scope: :product, url: products_path, local: true do |form| %>
+      <%= form_with scope: :product, url: products_path, local: true, html: { multipart: true } do |form| %>
       
         <% if @product.errors.any? %>
-          <div id="error_explanation">
+          <div id="error_explanation" class="alert alert-danger">
             <h2>
               <%= pluralize(@product.errors.count, "error") %> prohibited
               this product from being saved:
@@ -26,7 +26,8 @@
         <%= form.hidden_field :customer_id, :value => @current_customer[:id] %>
 
         <p>
-          <%= form.select(:product_type_id, :include_blank => 'None Specified') do %>
+          <%= form.select(:product_type_id, include_blank: true) do %>
+              <%= content_tag(:option, "Choose a category", value: "") %>
             <% ProductType.all.each do |c| -%>
               <%= content_tag(:option, c.product_type_name, value: c.id) %>
             <% end %>
@@ -41,6 +42,11 @@
         </p>
 
         <p>
+          <%= form.label "Upload Image" %><br>
+          <%= form.file_field :avatar %>
+        </p>
+
+        <p>
           <%= form.label :product_price %><br>
           <%= form.text_field :product_price, class: "form-control"  %>
         </p>
@@ -51,8 +57,11 @@
         </p>
 
         <p>
+        <%= form.label "Local Delivery?" %><br>
+        <label class="switch">
           <%= form.check_box :local_delivery, id: "delivery-checkbox", onclick: "localDelivery();" %>
-          <%= form.label 'Local Delivery?' %><br>
+          <span class="slider round"></span>
+        </label>
           <div id="local-delivery" class="hide">
             <%= form.label 'Delivery Destination' %><br>
             <%= form.text_field :product_location, class: "form-control"  %>
