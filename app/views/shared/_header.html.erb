@@ -24,17 +24,19 @@
                     </div>
             </li>
             <% if logged_in? %>
-                <li class="nav-item">
-                    <a class="nav-link" href="/products" id="myProducts">My Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/products/new" id="sell">Sell</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="cart">Cart</a>
-                </li>
-            <% end %>
+
             <li class="nav-item">
+                <a class="nav-link" href="/products" id="myProducts">My Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products/new" id="sell">Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="cart">Cart</a>
+            </li>
+            <li class="nav-item">
+
+            <% end %>
                 <%# <a class="nav-link" href="#" id="cart">Cart</a> %>
                 <% if logged_in? %>
                     <%= link_to 'Profile', customer_path(@current_customer.id), {:class => "nav-link"} %>
