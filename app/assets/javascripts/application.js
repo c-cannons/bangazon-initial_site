@@ -17,6 +17,12 @@
 //= require turbolinks
 //= require_tree .
 
+$("search-input").keypress(function (event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $("searchbar").submit();
+    }
+});
 function localDelivery() {
     if ($('#delivery-checkbox').is(":checked")) {
         $('#local-delivery').removeAttr('class');
