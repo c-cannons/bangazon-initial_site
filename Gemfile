@@ -39,8 +39,6 @@ gem 'jquery-rails'
 gem 'pry'
 ################
 
-gem 'rmagick'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

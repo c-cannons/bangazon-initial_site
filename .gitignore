@@ -21,13 +21,7 @@
 /yarn-error.log
 
 .byebug_history
-<<<<<<< HEAD
-/public/system/products/*
-=======
 
-<<<<<<< HEAD
-/public/system/products/*
-=======
 .DS_Store
->>>>>>> d0ae85170f658e531550f4eb6013762b08fd2b0e
->>>>>>> master
+
+/public/system/products/*
