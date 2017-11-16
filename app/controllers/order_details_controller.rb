@@ -3,7 +3,7 @@ class OrderDetailsController < ApplicationController
     def index
         @buyer_id = session[:customer_id]
         # @shopping_cart = Product.joins(:orders).where("orders.customer_id = #{@buyer_id}")
-        @shopping_cart = Product.joins(:orders).where("orders.customer_id = #{@buyer_id}").select('order_details.id AS order_details_id, products.product_name, products.product_price, products.product_desc, products.product_location')
+        @shopping_cart = Product.joins(:orders).where("orders.customer_id = #{@buyer_id} AND orders.payment_method_id ISNULL").select('order_details.id AS order_details_id, products.product_name, products.product_price, products.product_desc, products.product_location')
     end
 
     def create
