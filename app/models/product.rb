@@ -13,5 +13,4 @@ class Product < ApplicationRecord
         search_string = "%" + search_string + "%"
         self.where("product_location LIKE ?", search_string)
     end
-
 end

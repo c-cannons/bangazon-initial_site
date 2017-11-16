@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
-        # @order_details = OrderDetail.all
     end 
 
     def new
