@@ -33,6 +33,12 @@
                 <a class="nav-link" href="#" id="cart">Cart</a>
             </li>
             <li class="nav-item">
+                <%# <a class="nav-link" href="#" id="cart">Cart</a> %>
+                <% if logged_in? %>
+                    <%= link_to 'Profile', customer_path(@current_customer.id), {:class => "nav-link"} %>
+                <% end %>
+            </li>
+            <li class="nav-item">
                     <% if logged_in? %>
                         <%= link_to 'Logout', logout_path, {:class => "nav-link"} %>
                     <% else %>
@@ -45,6 +51,7 @@
                         <%= link_to "Log In", login_path, {:class => "nav-link"} %>
                     <% end %>
             </li>
+            
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
