@@ -11,7 +11,6 @@ class ProductTypesController < ApplicationController
     def show
         @product_type = ProductType.find(params[:id])
         @products = Product.where(product_type_id: @product_type[:id])
-        p @products
     end
 
     # This is only used for the faker gem

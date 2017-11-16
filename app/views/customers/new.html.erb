@@ -16,45 +16,46 @@
 
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: "form-control" %>
     </div>
       <div class="field">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :customer_first_name %><br />
-      <%= f.text_field :customer_first_name %>
+      <%= f.text_field :customer_first_name, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :customer_last_name %><br />
-      <%= f.text_field :customer_last_name %>
+      <%= f.text_field :customer_last_name, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :street_address %><br />
-      <%= f.text_field :street_address %>
+      <%= f.text_field :street_address, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :city %><br />
-      <%= f.text_field :city %>
+      <%= f.text_field :city, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :state %><br />
-      <%= f.text_field :state %>
+      <%= f.text_field :state, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :zip %><br />
-      <%= f.text_field :zip %>
+      <%= f.text_field :zip, class: "form-control" %>
     </div>
     <div class="field">
       <%= f.label :phone_number %><br />
-      <%= f.text_field :phone_number %>
+      <%= f.text_field :phone_number, class: "form-control" %>
     </div>
-
-    <div class="actions"><%= f.submit "Sign Up" %></div>
+    <p>
+      <div class="actions"><%= f.submit "Sign Up", class: "btn btn-success" %></div>
+    </p>
   <% end %>
 </div>
