@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-rescue_from SQLite3::ConstraintException, :with => :cannot_delete
+    rescue_from SQLite3::ConstraintException, :with => :cannot_delete
+
     def index
         @products = Product.all
     end 
@@ -48,5 +49,4 @@ rescue_from SQLite3::ConstraintException, :with => :cannot_delete
             redirect_to products_path
             flash[:notice] = 'This product is part of an order and cannot be deleted.'
         end
-
 end
