@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
+        # @order_details = OrderDetail.all
     end 
 
     def new
@@ -21,7 +22,6 @@ class ProductsController < ApplicationController
 
     def create
         @product = Product.new(product_params)
-        # @product[:customer_id] = @current_user
         if @product.save
             redirect_to @product
         else
