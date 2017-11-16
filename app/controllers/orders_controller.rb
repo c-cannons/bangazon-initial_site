@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
     def index
-        @orders = Order.all.where
+        # @orders = Order.where("customer_id = '1' AND payment_method_id = '0'" )
+        @shopping_cart = Product.joins(:orders).where("orders.customer_id = '1'")
     end
 
     def create

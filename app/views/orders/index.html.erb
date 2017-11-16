@@ -6,6 +6,13 @@
 
       <h2>PUTTING THE CART BEFORE THE HORSE</h2>
 
+      <div>
+        <% @shopping_cart.each do |item| %>
+          <p>Item name: <%= item.product_name %>; Price: <%= item.product_price %>; Description: <%= item.product_desc %>
+          </p>
+        <% end %>
+      <div>
+
     </div>
   </div>
 </div>
