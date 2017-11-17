@@ -1,14 +1,16 @@
 class CustomersController < ApplicationController
     # before_action :require_login
-    
+
     def new
         @customer = Customer.new
     end
-    
+
     def create
         @customer = Customer.new(customer_params)
         if @customer.save
             session[:customer_id] = @customer.id
+            @new_order = Order.create!(:customer_id => @customer.id, :payment_method_id => nil)
+            session[:order_id] = @new_order.id
             redirect_to root_url, notice: 'Thank you for signing up!'
         else
             render :new
