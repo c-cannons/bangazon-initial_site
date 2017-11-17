@@ -35,9 +35,9 @@ function localDelivery() {
 
 function changeSearch() {
     if ($('#search_by_name').is(':checked')) {
-        $('.search-by-label').html(' City ').hide(0).fadeIn('slow');
+        $('.search-by-label').stop().html(' City ').hide(0).fadeIn('slow');
     } else {
-        $('.search-by-label').html(' Product ').hide(0).fadeIn('slow');
+        $('.search-by-label').stop().html(' Product ').hide(0).fadeIn('slow');
     }
 }
 
