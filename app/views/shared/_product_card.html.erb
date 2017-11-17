@@ -9,7 +9,9 @@
                     <p class="card-text"> <%= p[:quantity] %> </p>
                     <h6> Price: </h6>
                     <p class="card-text">$ <%= p[:product_price] %> </p>
-                    <a> <%= link_to 'More Info', product_path(p), class: 'btn' %> </a>
+                    <%= link_to 'Add to Cart', add_to_cart_path(p[:id]), method: :post, :data => {:confirm => 'Item Added to Cart!'} %>
+                    <br>
+                    <%= link_to 'More Info', product_path(p), class: 'btn' %>
                 </div>
             </div>
         <% end %>

@@ -10,7 +10,7 @@
         <p>
         <%= image_tag @product.avatar.url %>
         </p>
-        
+
         <p>
         <strong>Price:</strong>
         <%= @product.product_price %>
@@ -29,7 +29,9 @@
         </strong>
 
         <br>
-
+        <%= link_to 'Add to Cart', add_to_cart_path(@product.id), method: :post, :data => {:confirm => 'Item Added to Cart!'} %>
+        <br>
+        <br>
         <%= link_to 'Back', products_path %>
 
         </div>

@@ -6,6 +6,7 @@
         <br>
         <h2>Shopping Cart</h2>
         <br>
+        <%= link_to 'Clear Shopping Cart', clear_cart_path, method: :delete, :data => {:confirm => 'Are you sure?'} %>
         <table>
         <tr id="table-headers">
             <th>Product Name</th>

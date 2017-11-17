@@ -9,6 +9,7 @@
         <%= @current_customer.id %>
         <%= @current_customer.customer_first_name %>
         <%= @current_customer.customer_last_name %>
+        <%= session[:order_id] %>
     <% end %>
     <div>
         <%= image_tag('CHUDazon', class:'img-fluid') %>
