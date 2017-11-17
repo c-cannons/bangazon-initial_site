@@ -22,13 +22,15 @@
         <%= @product.product_location %>
         </p>
 
-        <strong>Quantity</strong>
+        <strong>Quantity:</strong>
         <%= @product.quantity %>
         </strong>
 
-        <br>
-        <%= link_to 'Add to Cart', add_to_cart_path(@product.id), method: :post, :data => {:confirm => 'Item Added to Cart!'} %>
-        <br>
+        <% if session[:customer_id] %>
+          <br>
+          <%= link_to 'Add to Cart', add_to_cart_path(@product.id), method: :post, :data => {:confirm => 'Item Added to Cart!'} %>
+          <br>
+        <% end %>
         <br>
         <%= link_to 'Back', products_path %>
 
