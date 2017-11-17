@@ -6,13 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'date'
+
 customer_ids = []
 payment_method_ids = []
 
 ##########################################################################################
 # MUST CREATE 4 CUSTOMERS MANUALLY TO SEED PROPERLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ##########################################################################################
-
+50.times do |f|
+    Customer.create([{
+        email: Faker::Internet.email,
+        password_digest: 123123,
+        customer_first_name: Faker::Name.first_name,
+        customer_last_name: Faker::Name.last_name,
+        street_address: Faker::Address.street_address,
+        city: Faker::Address.city,
+        state: Faker::Address.state_abbr,
+        zip: Faker::Address.zip,
+        phone_number: Faker::PhoneNumber.phone_number
+    }])
+end
 
 15.times do |f|
     ProductType.create([{
@@ -20,25 +34,28 @@ payment_method_ids = []
     }])
 end
 
-20.times do |f|
+200.times do |f|
     Product.create([{
-        customer_id: rand(1..4), 
+        customer_id: rand(1..50), 
         product_type_id: rand(1..15), 
         product_name: Faker::Commerce.product_name, 
         product_price: Faker::Commerce.price,
         product_desc: Faker::Lorem.paragraph,
         quantity: rand(1..50),
-        product_location: Faker::Address.city
+        product_location: Faker::Address.city, 
+        avatar_file_name: Faker::Fillmurray.image,
+        avatar_content_type: 'image/jpg',
+        avatar_updated_at: Date.today
     }])
 end
     
 
-12.times do |f|
-    customer_ids << rand(1..4)
+120.times do |f|
+    customer_ids << rand(1..50)
     payment_method_ids << f+1
 end
 
-12.times do |f|
+120.times do |f|
 
     PaymentMethod.create([{
         payment_method_name: Faker::Business.credit_card_type,
@@ -54,10 +71,10 @@ end
     customer_ids.delete_at(0)
 end
 
-25.times do |f|
+500.times do |f|
     OrderDetail.create([{
-        order_id: rand(1..12),
-        product_id: rand(1..20)
+        order_id: rand(1..120),
+        product_id: rand(1..200)
     }])
 end
 
