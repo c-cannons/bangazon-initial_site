@@ -17,13 +17,9 @@ class SessionsController < ApplicationController
           session[:order_id] = order.id
         else
           @new_order = Order.create!(:customer_id => customer.id, :payment_method_id => nil)
-          # new_order.customer_id = session[:customer_id]
-          # new_order.payment_method_id = nil
-          # @new_order.save
-          # order = Order.find_by(customer_id: customer.id, payment_method: nil)
-          session[:order_id] = 'No Order'
+          get_new_order = Order.find_by(customer_id: customer.id, payment_method: nil)
+          session[:order_id] = get_new_order.id
         end
-        # can set order id here
         redirect_to root_url, notice: 'Thank you for logging in!'
       else
         flash.now.notice = 'Email or password is invalid'
