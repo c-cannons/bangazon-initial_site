@@ -7,8 +7,6 @@ class OrderDetailsController < ApplicationController
 
     def create
         @order_detail = OrderDetail.new(order_detail_params)
-        ## look up[ order id using customer id
-        ## assign to @order_detail.order_id]
         @order_detail.order_id = session[:order_id]
         @order_detail.save
     end
