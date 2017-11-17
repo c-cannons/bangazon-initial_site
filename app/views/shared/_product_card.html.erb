@@ -2,7 +2,7 @@
     <div class="row">
         <% prod.each do |p|%>
             <div class="card col-md" style="width: 20rem;">
-                <img class="card-img-top" src="..." alt="Card image cap">
+            <%# <%= image_tag p.avatar.original_filename, class: "card-img-top" %>
                 <div class="card-block">
                     <h4 class="card-title"> <%= p[:product_name]%> </h4>
                     <h6> Quantity: </h6>

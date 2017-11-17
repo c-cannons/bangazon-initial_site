@@ -22,4 +22,5 @@
 
 .byebug_history
 
+/public/system/products/*
 .DS_Store
