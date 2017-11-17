@@ -1,4 +1,3 @@
-<%= render 'shared/header' %>
 <div class="container">
     <h1>Customer Profile</h1>
     <p><b>First Name:</b> <%= @customer.customer_first_name %></p>
@@ -16,5 +15,8 @@
     </div>
     <div>
     <%= link_to 'Order History', orders_path%>
+    </div>
+    <div>
+    <%= link_to 'Edit Customer', edit_customer_path %>
     </div>
 </div>
