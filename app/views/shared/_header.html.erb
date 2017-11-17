@@ -60,12 +60,16 @@
 
         <%= form_tag('/products/search', method: "get", id: "searchbar", class: "form-inline my-2 my-lg-0") do %>
 
-            <%= text_field_tag(:search_string, nil, class: 'form-control', placeholder: 'Search', id: 'search-input')%>
+            <%= text_field_tag(:search_string, nil, class: 'form-control mr-4', placeholder: 'Search', id: 'search-input')%>
+            <div class="d-flex align-items-center">
+            
+                <label class="switch">
+                <p class="search-by-label pb-4"> Product </p>
+                    <%= check_box_tag :search_by_name, 'search-switch', id: "search-switch", class: "pt-2" %>
+                    <span class="slider round pt-2" onclick="changeSearch();"></span>
+                </label>
 
-            <label class="switch">
-                <%= check_box_tag :search_by_name, 'search-switch', id: "search-switch" %>
-                <span class="slider round"></span>
-            </label>
+            </div>
 
         <% end %>
 
