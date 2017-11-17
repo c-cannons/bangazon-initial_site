@@ -1,0 +1,23 @@
+footer {
+    text-align: center;
+    font-size: .8rem;
+    color: white;
+    background-color: #323B40;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    display:table;
+    // position: fixed;
+}
+
+#footer-p {
+    margin-bottom: 0rem;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container {
+    margin-bottom: 1rem;
+}
