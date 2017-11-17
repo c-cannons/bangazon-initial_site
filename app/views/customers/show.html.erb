@@ -1,22 +1,23 @@
-<div class="container">
-    <h1>Customer Profile</h1>
-    <p><b>First Name:</b> <%= @customer.customer_first_name %></p>
-    <p><b>Last Name:</b> <%= @customer.customer_last_name %></p>
-    <p><b>Email:</b> <%= @customer.email %></p>
-    <p><b>Street Address:</b> <%= @customer.street_address %></p>
-    <p><b>City:</b> <%= @customer.city %></p>
-    <p><b>State:</b> <%= @customer.state %></p>
-    <p><b>Zip:</b> <%= @customer.zip %></p>
-    <p><b>Phone:</b> <%= @customer.phone_number %></p>
-
-    <div>
-    <%= link_to 'See Your Payment Methods', payment_methods_path %> | 
-    <%= link_to "Add New Payment Method", new_pay_path  %>
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="welcome">Customer Profile</h1>
+        <br>
+        <p><b>First Name:</b> <%= @customer.customer_first_name %></p>
+        <p><b>Last Name:</b> <%= @customer.customer_last_name %></p>
+        <p><b>Email:</b> <%= @customer.email %></p>
+        <p><b>Street Address:</b> <%= @customer.street_address %></p>
+        <p><b>City:</b> <%= @customer.city %></p>
+        <p><b>State:</b> <%= @customer.state %></p>
+        <p><b>Zip:</b> <%= @customer.zip %></p>
+        <p><b>Phone:</b> <%= @customer.phone_number %></p>
+        <div>
+        <hr>
+        <%= link_to 'See Your Payment Methods', payment_methods_path %> | 
+        <%= link_to "Add New Payment Method", new_pay_path  %> |
+        <%= link_to 'Order History', orders_path%> |
+        <%= link_to 'Edit Customer', edit_customer_path %>
+        </div>
     </div>
-    <div>
-    <%= link_to 'Order History', orders_path%>
-    </div>
-    <div>
-    <%= link_to 'Edit Customer', edit_customer_path %>
-    </div>
+  </div>
 </div>

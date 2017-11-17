@@ -1,6 +1,64 @@
-<div class="container">
-  <h1>Sign Up</h1>
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Sign Up</h1>
 
-  <%= render 'new_customer_form'%>
+      <%= form_for @customer do |f| %>
+        <% if @customer.errors.any? %>
+          <div class="error_messages">
+            <h2>Form is invalid</h2>
+            <ul>
+              <% @customer.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
 
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+          <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :customer_first_name %><br />
+          <%= f.text_field :customer_first_name, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :customer_last_name %><br />
+          <%= f.text_field :customer_last_name, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :street_address %><br />
+          <%= f.text_field :street_address, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :city %><br />
+          <%= f.text_field :city, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :state %><br />
+          <%= f.text_field :state, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :zip %><br />
+          <%= f.text_field :zip, class: "form-control" %>
+        </div>
+        <div class="field">
+          <%= f.label :phone_number %><br />
+          <%= f.text_field :phone_number, class: "form-control" %>
+        </div>
+        <p>
+          <div class="actions"><%= f.submit "Sign Up", class: "btn btn-success" %></div>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>

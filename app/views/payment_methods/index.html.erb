@@ -1,10 +1,14 @@
-<div class="container">
-    <h1>Payment Methods</h1>
-    <% @payment_methods.each do |payment_method|%>
-        <p><b>Payment Type: </b><%= payment_method.payment_method_name %></p>
-        <p><b>Account Number: </b><%= payment_method.account_number %></p>
-        <%= link_to 'Delete Payment Method', payment_method_path(payment_method), method: :delete, data: {confirm: 'Are you sure you want to delete this payment method? Bankruptcy is increasingly common these days.'} %>
-        <hr>
-    <% end %>
-    <%= link_to "Add New Payment Method", new_pay_path  %> | <%= link_to 'Back To Profile', customer_path(@current_customer.id) %>
-<div>
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1>Payment Methods</h1>
+        <% @payment_methods.each do |payment_method|%>
+            <p><b>Payment Type: </b><%= payment_method.payment_method_name %></p>
+            <p><b>Account Number: </b><%= payment_method.account_number %></p>
+            <%= link_to 'Delete Payment Method', payment_method_path(payment_method), method: :delete, data: {confirm: 'Are you sure you want to delete this payment method? Bankruptcy is increasingly common these days.'} %>
+            <hr>
+        <% end %>
+        <%= link_to "Add New Payment Method", new_pay_path  %> | <%= link_to 'Back To Profile', customer_path(session[:customer_id]) %>
+    </div>
+  </div>
+</div>
