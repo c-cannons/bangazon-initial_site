@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   get 'search', to: 'products#search', as: 'search'
 
+  post 'add_to_cart/:product_id', to: 'order_details#create', as: 'add_to_cart'
+
+  delete 'clear_cart', to: 'order_details#clear_cart', as: 'clear_cart'
+
   get 'home/index'
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
