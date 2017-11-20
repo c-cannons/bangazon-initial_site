@@ -14,17 +14,25 @@
         <%= @product.product_price %>
         </p>
 
+        <p>
         <strong>Description:</strong>
         <%= @product.product_desc %>
         </p>
 
+        <p>
         <strong>Location:</strong>
-        <%= @product.product_location %>
+        <% if @product.product_location != "" %>
+            <%= @product.product_location %>
+        <% else %>
+            <p>Not available for local delivery.</p>
+        <% end %>
         </p>
 
+        <p>
         <strong>Quantity:</strong>
         <%= @product.quantity %>
         </strong>
+        </p>
 
         <% if session[:customer_id] %>
           <br>
