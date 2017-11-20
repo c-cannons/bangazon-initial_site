@@ -1,9 +1,10 @@
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 40px;
   height: 22px;
+  margin-top: 1rem;
 }
 
 /* Hide default HTML checkbox */
@@ -55,4 +56,8 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.search-by-label {
+  color: white;
 }
