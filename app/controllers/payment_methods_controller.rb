@@ -23,9 +23,13 @@ class PaymentMethodsController < ApplicationController
         @payment_method.destroy
         redirect_to payment_methods_path
     end
-    
+
+    def close_order
+      @payment_methods = PaymentMethod.where(customer_id: session[:customer_id])
+    end
+
     private
-    
+
         def payment_method_params
             params.require(:payment_method).permit(:payment_method_name, :account_number, :customer_id)
         end

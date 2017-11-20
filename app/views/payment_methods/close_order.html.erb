@@ -1,0 +1,22 @@
+<div class="container center">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <% if @payment_methods != []%>
+            <h2>Choose Payment Method:</h2>
+            <% @payment_methods.each do |payment_method|%>
+                <p><b>Payment Type: </b><%= payment_method.payment_method_name %></p>
+                <p><b>Account Number: </b><%= payment_method.account_number %></p>
+                <%= link_to 'Choose this Payment Method', apply_payment_path(payment_method.id), method: :patch, data: {confirm: 'Are you sure? Click ok to complete purchase.'} %>
+                <hr>
+            <% end %>
+        <% else %>
+            <h3> You have no payment methods on your account. Please add a payment method. </h3>
+            <br>
+            <br>
+            <%= link_to "Add New Payment Method", new_pay_path  %>
+        <% end %>
+
+    </div>
+  </div>
+</div>

@@ -16,13 +16,12 @@
                 <th>Location</th>
                 <th>Quantity</th>
                 <th></th>
-                <th></th>
             </tr>
 
             <% @shopping_cart.each do |item| %>
                 <tr>
                 <td><%= item.product_name %></td>
-                <td><%= item.product_price %></td>
+                <td>$<%= item.product_price %></td>
                 <td><%= item.product_desc %></td>
                 <td><%= item.product_location %></td>
                 <% if product_available?(item)%>
@@ -34,18 +33,22 @@
                     <p> <small>Only <%= get_quantity_to_update_to(item) + item.quantity %> available.</small></p>
                 </td>
                 <% end %>
-                <td><%= item.order_details_id %></td>
                 <td><%= link_to 'Delete from Cart', order_detail_path(item.order_details_id),
                         method: :delete,
                         data: {confirm: 'Are you sure?' } %></td>
                 </tr>
             <% end %>
+            <tr>
+              <td>TOTAL:</td>
+              <td colspan="5">$<%= @cart_total[0].grand_total %></td>
+            </tr>
             </table>
             <% if @can_buy %>
-                <%= link_to 'Complete Order', complete_order_path %>
+                <%= button_to 'Checkout', close_order_path, method: :get %>
             <% else %>
                 <p>Please remove necessary amount of items to complete order.</p>
             <% end %>
+
         <% else %>
 
             <header>
