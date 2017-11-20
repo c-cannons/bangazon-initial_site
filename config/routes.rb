@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
   post 'add_to_cart/:product_id', to: 'order_details#create', as: 'add_to_cart'
 
+  get 'complete_order', to: 'order_details#complete_order', as: 'complete_order'
+
   delete 'clear_cart', to: 'order_details#clear_cart', as: 'clear_cart'
 
   get 'home/index'

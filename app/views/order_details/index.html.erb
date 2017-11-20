@@ -14,6 +14,7 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Location</th>
+                <th>Quantity</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -24,6 +25,15 @@
                 <td><%= item.product_price %></td>
                 <td><%= item.product_desc %></td>
                 <td><%= item.product_location %></td>
+                <% if product_available?(item)%>
+                    <td><%= item.quantity%></td>
+                <% else %>
+                    <td class="red">
+                    <% @can_buy = false %>
+                    <%= item.quantity%> <br> 
+                    <p> <small>Only <%= get_quantity_to_update_to(item) + item.quantity %> available.</small></p>
+                </td>
+                <% end %>
                 <td><%= item.order_details_id %></td>
                 <td><%= link_to 'Delete from Cart', order_detail_path(item.order_details_id),
                         method: :delete,
@@ -31,7 +41,11 @@
                 </tr>
             <% end %>
             </table>
-
+            <% if @can_buy %>
+                <%= link_to 'Complete Order', complete_order_path %>
+            <% else %>
+                <p>Please remove necessary amount of items to complete order.</p>
+            <% end %>
         <% else %>
 
             <header>

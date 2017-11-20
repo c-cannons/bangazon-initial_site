@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Come on 7's</h1>
+            <% @shopping_cart.each do |item| %>
+
+                <p><%= item.product_name %></p>
+                <% if product_available?(item) %>
+                    <p> True </p>
+                    <p> <%= get_quantity_to_update_to(item) %> </p>
+                <% else %>
+                    <p> False </p>
+                <% end %>
+                <p> <%= item.quantity %> </p>
+                <% update_quantity(item) %>
+            <% end %>
+        </div>
+    </div>
+</div>
