@@ -14,7 +14,7 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Location</th>
-                <th></th>
+                <th>Quantity</th>
                 <th></th>
             </tr>
 
@@ -24,7 +24,15 @@
                 <td>$<%= item.product_price %></td>
                 <td><%= item.product_desc %></td>
                 <td><%= item.product_location %></td>
-                <td><%= item.order_details_id %></td>
+                <% if product_available?(item)%>
+                    <td><%= item.quantity%></td>
+                <% else %>
+                    <td class="red">
+                    <% @can_buy = false %>
+                    <%= item.quantity%> <br> 
+                    <p> <small>Only <%= get_quantity_to_update_to(item) + item.quantity %> available.</small></p>
+                </td>
+                <% end %>
                 <td><%= link_to 'Delete from Cart', order_detail_path(item.order_details_id),
                         method: :delete,
                         data: {confirm: 'Are you sure?' } %></td>
@@ -32,11 +40,14 @@
             <% end %>
             <tr>
               <td>TOTAL:</td>
-              <td>$<%= @cart_total[0].grand_total %></td>
-              <td></td><td></td><td></td><td></td>
+              <td colspan="5">$<%= @cart_total[0].grand_total %></td>
             </tr>
             </table>
-            <%= button_to 'Checkout', close_order_path, method: :get %>
+            <% if @can_buy %>
+                <%= button_to 'Checkout', close_order_path, method: :get %>
+            <% else %>
+                <p>Please remove necessary amount of items to complete order.</p>
+            <% end %>
 
         <% else %>
 

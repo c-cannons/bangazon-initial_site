@@ -42,6 +42,7 @@ class ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
+        print "prodddddd: #{@product.inspect}"
     end
 
     def destroy
