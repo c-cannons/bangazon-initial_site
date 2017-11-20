@@ -3,6 +3,7 @@
     <div class="col-md-8">
       <br>
       <h2>Create a Product to Sell</h2>
+      <h5 class="red"><%= flash[:notice] %></h5>
       <br>
       
       <%= form_with scope: :product, url: products_path, local: true, html: { multipart: true } do |form| %>
