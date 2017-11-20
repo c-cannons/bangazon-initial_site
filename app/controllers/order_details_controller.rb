@@ -10,6 +10,7 @@ class OrderDetailsController < ApplicationController
         @order_detail = OrderDetail.new(order_detail_params)
         @order_detail.order_id = session[:order_id]
         @order_detail.save
+        redirect_back fallback_location: order_details_path
     end
 
     def destroy
