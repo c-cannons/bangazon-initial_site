@@ -21,7 +21,7 @@
             <% @shopping_cart.each do |item| %>
                 <tr>
                 <td><%= item.product_name %></td>
-                <td><%= item.product_price %></td>
+                <td>$<%= item.product_price %></td>
                 <td><%= item.product_desc %></td>
                 <td><%= item.product_location %></td>
                 <td><%= item.order_details_id %></td>
@@ -30,7 +30,13 @@
                         data: {confirm: 'Are you sure?' } %></td>
                 </tr>
             <% end %>
+            <tr>
+              <td>TOTAL:</td>
+              <td>$<%= @cart_total[0].grand_total %></td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
             </table>
+            <%= button_to 'Checkout', close_order_path, method: :get %>
 
         <% else %>
 
