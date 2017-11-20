@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
         end
 
         def curses
-            regexArray = [/([Ss]hit(, )?)+/,/([Pp]iss(, )?)+/, /([Ff]uck(, )?)+/, /([Cc]unt(, )?)+/, /([Cc]ocksucker(, )?)+/, /([Mm]otherfucker(, )?)+/, /([Tt]its(, )?)+/, /([Aa]ss(, )?)+/, /([Tt]wat(, )?)+/]
+            regexArray = [/([Ss]hit(, )?)+/i,/([Pp]iss(, )?)+/i, /([Ff]uck(, )?)+/i, /([Cc]unt(, )?)+/i, /([Cc]ock(, )?)+/i, /([Mm]otherfucker(, )?)+/i, /([Tt]its(, )?)+/i, /([Aa]ss(, )?)+/i, /([Tt]wat(, )?)+/i, /([Bb]itch(, )?)+/i, /([Pp]ussy(, )?)+/i, /([Ff]ag(, )?)+/i, /([Ss]lut(, )?)+/i]
             return Regexp.union(regexArray)
         end
 end
