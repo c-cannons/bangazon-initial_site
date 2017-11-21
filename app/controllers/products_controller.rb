@@ -1,14 +1,17 @@
 class ProductsController < ApplicationController
     rescue_from SQLite3::ConstraintException, :with => :cannot_delete
 
+    # shows all products
     def index
         @products = Product.all
     end 
 
+    # instantiates Product model
     def new
         @product = Product.new
     end
 
+    # searches for produts
     def search
         @search = params[:search_string]
         if params[:search_by_name]
@@ -19,6 +22,7 @@ class ProductsController < ApplicationController
         render 'products/search'
     end
 
+    # creates product aftere checking for curse words
     def create
         regex = curses
         @product = Product.new(product_params)
@@ -40,11 +44,13 @@ class ProductsController < ApplicationController
         end
     end
 
+    # show selected product
     def show
         @product = Product.find(params[:id])
         print "prodddddd: #{@product.inspect}"
     end
 
+    # deletes product
     def destroy
         @product = Product.find(params[:id])
         @product.destroy
