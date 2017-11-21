@@ -1,81 +1,47 @@
-# README
+# Banagazon E-commerce Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### High-Level Description
 
-Things you may want to cover:
+Banagazon.com is an e-commerce web app built with Ruby on Rails.
 
-* Ruby version
+### Installation Instructions
 
-* System dependencies
+1. Fork and/or clone this repo.
+1. Ensure you have Rails ~> 5.1.4 installed.
+1. Run `bundle install` to install the necessary gems.
+1. Run `rails db:migrate`
+1. Run `rails db:seed`
+1. Run `rails server`.
+1. Navigate to [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
 
-* Configuration
+### Dependency List with Version Numbers
 
-* Database creation
+* Rails ~> 5.1.4
+* sqlite3
+* puma ~> 3.7
+* sass-rails ~> 5.0
+* uglifier >= 1.3.0
+* coffee-rails ~> 4.2
+* turbolinks ~> 5
+* jbuilder ~> 2.5
+* bcrypt ~> 3.1.7
+* paperclip
+* faker
+* bootstrap ~> 4.0.0.beta2
+* jquery-rails
+* pry
+* byebug
+* capybara ~> 2.13
+* selenium-webdriver
+* web-console >= 3.3.0
+* listen >= 3.0.5
+* spring
+* spring-watcher-listen ~> 2.0.0
+* tzinfo-data
 
-* Database initialization
+### Team Members
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* The lyrics to Despacito-
-
-<code>
-
-Sí, sabes que ya llevo un rato mirándote,
-Tengo que bailar contigo hoy.
-Vi que tu mirada ya estaba llamándome,
-Muéstrame el camino que yo voy.
-
-¡Oh!
-Tú, tú eres el imán y yo soy el metal.
-Me voy acercando y voy armando el plan,
-sólo con pensarlo se acelera el pulso.
-Ya, ya me está gustando más de lo normal.
-Todos mis sentidos van pidiendo más,
-Esto hay que tomarlo sin ningún apuro.
-
-Despacito
-Quiero respirar tu cuello despacito.
-Deja que te diga cosas al oído,
-para que te acuerdes si no estás conmigo.
-Despacito
-Quiero desnudarte a besos despacito.
-Firmar en las paredes de tu laberinto
-y hacer de tu cuerpo todo un manuscrito
-
-
-Quiero ver bailar tu pelo, quiero ser tu ritmo
-Que le enseñes a mi boca, tus lugares favoritos.
-Déjame sobrepasar tus zonas de peligro,
-hasta provocar tus gritos
-y que olvides tu apellido
-
-Si te pido un beso, ven, dámelo. Yo sé que estás pensándolo.
-Llevo tiempo intentándolo, mami, esto es dando y dándolo.
-Sabes que tu corazón conmigo te hace bam-bam.
-Sabes que esa beba está buscando de mi bam-bam.
-Ven, prueba de mi boca para ver cómo te sabe.
-Quiero, quiero, quiero ver cuánto amor a ti te cabe.
-Yo no tengo prisa, yo me quiero dar el viaje.
-Empezamos lento, después salvaje.
-
-Pasito a pasito, suave suavecito.
-Nos vamos pegando, poquito a poquito.
-Cuando tú me besas con esa destreza
-veo que eres malicia con delicadeza.
-Pasito a pasito, suave suavecito.
-Nos vamos pegando, poquito a poquito.
-Y es que esa belleza es un rompecabezas,
-pero pa’ montarlo aquí tengo la pieza.
-¡Oye!
-
-Despacito
-Vamo’ a hacerlo en una playa en Puerto Rico,
-hasta que las olas griten “¡Ay, Bendito!”
-para que mi sello se quede contigo.
-¡Bailalo!
-</code>
+* [Michael Lindstromm](https://github.com/michaellindstromm)
+* [Hiatt Collins](https://github.com/hiattcollins)
+* [Matt Brown](https://github.com/mtallentb)
+* [Dan Certa](https://github.com/daniel-certa-1228)
