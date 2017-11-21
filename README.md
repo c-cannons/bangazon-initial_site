@@ -4,6 +4,18 @@
 
 Banagazon.com is an e-commerce web app built with Ruby on Rails.
 
+Users can: 
+* sign up or log in with an email address and password
+* edit their user profile
+* see their current order and order history
+* add and delete payment methods
+* create items to sell
+* upload a picture of their item
+* delete items that have not yet been added to an order
+* see all products or products split up by category
+* add items to their shopping cart
+* check out with a payment method
+
 ### Installation Instructions
 
 1. Fork and/or clone this repo.
@@ -12,7 +24,7 @@ Banagazon.com is an e-commerce web app built with Ruby on Rails.
 1. Run `rails db:migrate`
 1. Run `rails db:seed`
 1. Run `rails server`.
-1. Navigate to [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
+1. Navigate to [http://127.0.0.1:3000/](http://127.0.0.1:3000/) and sign up!
 
 ### Dependency List with Version Numbers
 
