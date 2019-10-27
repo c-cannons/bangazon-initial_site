@@ -57,8 +57,3 @@ Users can:
 * [Hiatt Collins](https://github.com/hiattcollins)
 * [Matt Brown](https://github.com/mtallentb)
 * [Dan Certa](https://github.com/daniel-certa-1228)
-
-
-### Also - DevOps.
-
-![DevOps](app/assets/images/Devops.svg.png "DevOps")
